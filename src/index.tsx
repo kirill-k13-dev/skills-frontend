@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {Provider} from 'react-redux';
+
+import GlobalStyles from "./styledComponents/GlobalStyles";
+import App from './components/App';
+import store from './store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <div>
-    Hello world!
-  </div>
+  <Provider store={store}>
+      <App />
+      <GlobalStyles />
+  </Provider>
 );
