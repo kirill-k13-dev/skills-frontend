@@ -2,10 +2,12 @@ import React from "react";
 
 import SkillsItem from './SkillsItem';
 import {useAppSelector} from "../store/hook";
+import useFetchSkills from "../hooks/useFetchSkills";
 
 
 const SkillsList: React.FC = () => {
-    const skills =  useAppSelector(state => state.skills.list)
+    useFetchSkills();
+    const skills =  useAppSelector(state => state.skills.list);
 
     return (
         <>

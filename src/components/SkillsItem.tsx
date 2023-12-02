@@ -4,7 +4,7 @@ import {styled} from "styled-components";
 import {useAppDispatch} from '../store/hook';
 import {ISkill} from '../types/data';
 import {SubmitButton} from "../styledComponents/CommonComponents";
-import {toggleVerify, removeSkill} from "../store/skillSlice";
+import {removeSkill, toggleVerifySkill} from "../store/skillSlice";
 
 const ItemStyled = styled.div`
   margin-top: 10px;
@@ -50,7 +50,7 @@ const SkillsItem: React.FC<ISkill> = ({id, title, verified}) => {
                 <CheckboxStyled
                     type="checkbox"
                     checked={verified}
-                    onChange={() => dispatch(toggleVerify(id))}
+                    onChange={() => dispatch(toggleVerifySkill(id))}
                 />
             </div>
             <div>
